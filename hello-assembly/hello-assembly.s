@@ -1,8 +1,8 @@
 .global _start
 
 _start:	mov	X0, #1 // stdout 
-	ldr	X1, =message
-	mov	X2, #16 
+	ldr	X1, =msg
+	mov	X2, msg_len 
 	mov	X8, #64 // write to file (fd is in X0) system call
 	svc	0
 
@@ -11,4 +11,6 @@ _start:	mov	X0, #1 // stdout
 	svc	0
 
 .data
-message:	.ascii "Hello assembly!\n"
+msg:	.ascii "Hello assembly!\n"
+msg_len = . - msg // '.' means current value of location counter
+ 

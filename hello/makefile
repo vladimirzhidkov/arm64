@@ -5,10 +5,10 @@ ifdef DEBUG
 	EXEC = a.out
 else
 	DEBUGFLAGS =
-	EXEC = hello-assembly.out
+	EXEC = hello.out
 endif
 
-OBJS = hello-assembly.o
+OBJS = hello.o
 
 $(EXEC): $(OBJS) 
 	ld -o $(EXEC) $(OBJS) 
@@ -21,4 +21,3 @@ $(EXEC): $(OBJS)
 
 clean:
 	rm -f *.out *.o 
-	ls -l

@@ -5,10 +5,10 @@ ifdef DEBUG
 	EXEC = a.out
 else
 	DEBUGFLAGS =
-	EXEC = hello.out
+	EXEC = upper.out
 endif
 
-OBJS = hello.o
+OBJS = upper.o
 
 $(EXEC): $(OBJS) 
 	ld -o $(EXEC) $(OBJS) 

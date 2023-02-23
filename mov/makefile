@@ -1,14 +1,7 @@
 #-*- Makefile -*-
 
-ifdef DEBUG
-	DEBUGFLAGS = -g 
-	EXEC = a.out
-else
-	DEBUGFLAGS =
-	EXEC = hello.out
-endif
-
-OBJS = hello.o
+EXEC = a.out
+OBJS = a.o
 
 $(EXEC): $(OBJS) 
 	ld -o $(EXEC) $(OBJS) 
@@ -17,7 +10,7 @@ $(EXEC): $(OBJS)
 # @ = name of the current target
 # < = name of dependency
 %.o: %.s
-	as $(DEBUGFLAGS) -o $@ $< 
+	as -g -o $@ $< 
 
 clean:
 	rm -f *.out *.o
